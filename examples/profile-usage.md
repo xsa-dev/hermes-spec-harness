@@ -3,7 +3,7 @@
 Install the profile distribution:
 
 ```bash
-hermes profile install github.com/<owner>/hermes-spec-harness --alias hsh
+hermes profile install github.com/xsa-dev/hermes-spec-harness --alias hsh
 ```
 
 Run it:

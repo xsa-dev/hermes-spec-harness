@@ -55,7 +55,7 @@ The default destination is `~/.hermes/skills/hermes-spec-harness`. Use `--skill-
 Profile distribution installation:
 
 ```bash
-hermes profile install github.com/<owner>/hermes-spec-harness --alias hsh
+hermes profile install github.com/xsa-dev/hermes-spec-harness --alias hsh
 hsh chat
 ```
 

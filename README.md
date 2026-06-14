@@ -59,7 +59,7 @@ hermes profile install github.com/xsa-dev/hermes-spec-harness --name hsh --alias
 hsh chat
 ```
 
-The profile has its own config, identity, skills, sessions, and runtime state. Secrets and user memories must not be shipped in the distribution. The profile is not a filesystem sandbox; still use worktrees, Docker/remote terminal backend, or constrained project cwd.
+The profile has its own config, identity, skills, sessions, and runtime state. It defaults to `openai-codex` with model `gpt-5.5`, but ships no API keys or OAuth secrets; users must configure provider auth locally. Secrets and user memories must not be shipped in the distribution. The profile is not a filesystem sandbox; still use worktrees, Docker/remote terminal backend, or constrained project cwd.
 
 ## Using Hermes Spec Harness as a profile
 

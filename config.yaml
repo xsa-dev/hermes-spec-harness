@@ -5,7 +5,9 @@ profile:
 
 model:
   display_name: Hermes Spec Harness
-  # provider/model are resolved by the user's Hermes installation unless set locally.
+  provider: openai-codex
+  default: gpt-5.5
+  # No API keys or secrets are shipped; users must configure provider auth locally.
 
 terminal:
   # Set a constrained project cwd in your local profile after installation.

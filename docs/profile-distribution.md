@@ -7,7 +7,7 @@ hermes profile install github.com/xsa-dev/hermes-spec-harness --name hsh --alias
 hsh chat
 ```
 
-The `hsh` alias starts Hermes with the harness identity, config, skills, sessions, and runtime state. Distribution-owned files include profile metadata, `SOUL.md`, placeholder-safe config, the HSH skill, templates, schema bundles, examples, and docs.
+The `hsh` alias starts Hermes with the harness identity, config, skills, sessions, and runtime state. Distribution-owned files include profile metadata, `SOUL.md`, placeholder-safe config, the HSH skill, templates, schema bundles, examples, and docs. The default profile model is `gpt-5.5` via provider `openai-codex`; users must configure provider auth locally.
 
 Credentials, memories, sessions, and local state remain local and must not be bundled. The distribution contains no secrets.
 

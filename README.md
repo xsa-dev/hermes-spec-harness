@@ -55,7 +55,7 @@ The default destination is `~/.hermes/skills/hermes-spec-harness`. Use `--skill-
 Profile distribution installation:
 
 ```bash
-hermes profile install github.com/xsa-dev/hermes-spec-harness --alias hsh
+hermes profile install github.com/xsa-dev/hermes-spec-harness --name hsh --alias --yes
 hsh chat
 ```
 
@@ -128,4 +128,6 @@ npx --yes @fission-ai/openspec@latest schema validate
 
 ## Publishing
 
-Before public release, choose a license and add the matching `LICENSE` file. Publish the GitHub repository, optionally publish the Hermes skill, publish the profile distribution entry, and share the OpenSpec schema bundle as a community schema package.
+This project is licensed under the Apache License 2.0. See `LICENSE`.
+
+Publish the GitHub repository, optionally publish the Hermes skill, publish the profile distribution entry, and share the OpenSpec schema bundle as a community schema package.

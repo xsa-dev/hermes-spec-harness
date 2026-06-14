@@ -3,7 +3,7 @@ name: hermes-spec-harness
 description: OpenSpec-governed engineering harness for Hermes Agent
 version: 0.1.0
 author: Hermes Spec Harness
-license: MIT
+license: Apache-2.0
 platforms: [linux, macos, windows]
 metadata:
   hermes:

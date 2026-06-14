@@ -6,6 +6,14 @@ Install the profile distribution:
 hermes profile install github.com/xsa-dev/hermes-spec-harness --name hsh --alias --yes
 ```
 
+If the profile already exists and you want the latest bundled config defaults:
+
+```bash
+hermes profile update hsh --force-config --yes
+```
+
+Use `hermes profile update hsh --yes` without `--force-config` when preserving local config overrides is more important than adopting new defaults.
+
 Run it:
 
 ```bash

@@ -59,6 +59,14 @@ hermes profile install github.com/xsa-dev/hermes-spec-harness --name hsh --alias
 hsh chat
 ```
 
+If `hsh` already exists, update the installed distribution instead:
+
+```bash
+hermes profile update hsh --force-config --yes
+```
+
+`profile update` takes the profile name, not the GitHub URL. Use `--force-config` when you want new distribution defaults such as the bundled `gpt-5.5` model config to replace the installed profile config. The install command also supports `--force` for a reinstall; there is no `--overwrite` flag.
+
 The profile has its own config, identity, skills, sessions, and runtime state. It defaults to `openai-codex` with model `gpt-5.5`, but ships no API keys or OAuth secrets; users must configure provider auth locally. Secrets and user memories must not be shipped in the distribution. The profile is not a filesystem sandbox; still use worktrees, Docker/remote terminal backend, or constrained project cwd.
 
 ## Using Hermes Spec Harness as a profile

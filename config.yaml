@@ -9,6 +9,15 @@ model:
   default: gpt-5.5
   # No API keys or secrets are shipped; users must configure provider auth locally.
 
+auxiliary:
+  compression:
+    provider: openai-codex
+    model: gpt-5.5
+    # Force preflight/context summarization to use the same gpt-5.5 provider
+    # instead of auto-routing to OpenRouter or other auxiliary fallbacks.
+    timeout: 360
+    extra_body: {}
+
 terminal:
   # Set a constrained project cwd in your local profile after installation.
   cwd: null

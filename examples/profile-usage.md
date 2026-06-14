@@ -1,0 +1,17 @@
+# Profile Usage
+
+Install the profile distribution:
+
+```bash
+hermes profile install github.com/<owner>/hermes-spec-harness --alias hsh
+```
+
+Run it:
+
+```bash
+hsh chat
+```
+
+Alternative standard profile workflows can point Hermes at this distribution through the user's local profile management command. Profile mode gives HSH its own config, identity, skills, sessions, and runtime state.
+
+No secrets or user memories are shipped. Profile mode is not a sandbox; use worktrees, constrained cwd, Docker, or a remote terminal backend for filesystem isolation.

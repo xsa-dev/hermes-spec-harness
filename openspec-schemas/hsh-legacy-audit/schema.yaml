@@ -1,0 +1,49 @@
+name: hsh-legacy-audit
+version: 1
+description: Audit-first workflow for onboarding legacy projects under Hermes Spec Harness.
+artifacts:
+  - id: proposal
+    generates: proposal.md
+    description: Legacy project audit proposal with goal, constraints, boundaries, risks, and deliverables.
+    template: templates/proposal.md
+    instruction: |
+      Create an audit-only proposal for onboarding a legacy project. Include Goal,
+      Constraints, Audit boundaries, Risk framing, and Deliverables. Keep the
+      work read-only and do not authorize implementation changes.
+    requires: []
+  - id: specs
+    generates: specs.md
+    description: Legacy audit specification covering project overview, subsystem map, commands, risks, and roadmap.
+    template: templates/specs.md
+    instruction: |
+      Create audit specifications for a legacy project. Include Project overview,
+      Subsystem map, Command matrix, Risk register, Modernization roadmap, and
+      Read-only rules. Treat code and dependency files as read-only.
+    requires:
+      - proposal
+  - id: tasks
+    generates: tasks.md
+    description: Checkbox-driven audit-only checklist for legacy project onboarding.
+    template: templates/tasks.md
+    instruction: |
+      Create checkbox tasks for read-only discovery, subsystem mapping, command
+      inventory, risk register, roadmap, and review. Every actionable item must
+      use `- [ ]`. Do not include implementation edits.
+    requires:
+      - specs
+generates:
+  proposal: templates/proposal.md
+  specs: templates/specs.md
+  tasks: templates/tasks.md
+templates:
+  proposal: templates/proposal.md
+  specs: templates/specs.md
+  tasks: templates/tasks.md
+dependencies: []
+apply:
+  requires: [tasks]
+  tracks: tasks.md
+  instruction: |
+    Perform audit-only onboarding. Do not modify source code, tests, examples,
+    dependency files, infrastructure, secrets, or runtime state. Produce evidence,
+    risks, and a modernization roadmap for review.

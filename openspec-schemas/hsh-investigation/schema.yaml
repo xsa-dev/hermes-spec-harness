@@ -1,0 +1,37 @@
+name: hsh-investigation
+version: 1
+description: Read-only diagnosis workflow for Hermes Spec Harness.
+artifacts:
+  - id: specs
+    generates: specs.md
+    description: Investigation specification for diagnosis without source changes.
+    template: templates/specs.md
+    instruction: |
+      Create a read-only investigation specification. Include Hypothesis,
+      Evidence plan, Safe commands, Redaction rules, Non-goals, Expected output,
+      Follow-up recommendation, and an explicit No source changes section.
+      Do not authorize source edits in this schema.
+    requires: []
+  - id: tasks
+    generates: tasks.md
+    description: Checkbox-driven inspection, classification, and recommendation checklist.
+    template: templates/tasks.md
+    instruction: |
+      Create checkbox tasks for read-only evidence gathering, classification,
+      recommendation, and handoff. Every actionable item must use `- [ ]`.
+      Do not include implementation tasks that modify source code.
+    requires:
+      - specs
+generates:
+  specs: templates/specs.md
+  tasks: templates/tasks.md
+templates:
+  specs: templates/specs.md
+  tasks: templates/tasks.md
+dependencies: []
+apply:
+  requires: [tasks]
+  tracks: tasks.md
+  instruction: |
+    Perform read-only investigation only. Collect evidence, redact secrets,
+    classify the issue, and recommend follow-up work. Do not modify source code.

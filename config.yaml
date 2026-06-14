@@ -1,0 +1,18 @@
+# Hermes Spec Harness profile defaults.
+# This file intentionally contains no secrets.
+profile:
+  display_name: Hermes Spec Harness
+
+model:
+  display_name: Hermes Spec Harness
+  # provider/model are resolved by the user's Hermes installation unless set locally.
+
+terminal:
+  # Set a constrained project cwd in your local profile after installation.
+  cwd: null
+
+api:
+  # Disabled by default. Enable in the installed profile if exposing an OpenAI-compatible endpoint.
+  enabled: false
+  host: 127.0.0.1
+  port: 0

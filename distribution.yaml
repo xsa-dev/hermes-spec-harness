@@ -1,0 +1,17 @@
+name: hermes-spec-harness
+display_name: Hermes Spec Harness
+description: OpenSpec-governed engineering harness for Hermes Agent
+version: 0.1.0
+hermes_requires: ">=0.12.0"
+author: Hermes Spec Harness
+license: MIT
+distribution_owned:
+  - distribution.yaml
+  - SOUL.md
+  - config.yaml
+  - skills/hermes-spec-harness/
+  - templates/
+  - openspec-schemas/
+  - examples/
+  - docs/
+env_requires: []

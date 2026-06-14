@@ -1,0 +1,39 @@
+name: hsh-fix
+version: 1
+description: Bounded implementation workflow for approved fixes under Hermes Spec Harness.
+artifacts:
+  - id: specs
+    generates: specs.md
+    description: Bounded fix specification with goal, evidence, scope, acceptance criteria, verification, secret safety, and archive plan.
+    template: templates/specs.md
+    instruction: |
+      Create a small, reviewable fix specification before changing source code.
+      Include Goal, Context / Evidence, Scope, Out of scope, Expected files,
+      Acceptance criteria, Verification, Secret safety, and Archive plan.
+      Keep the fix narrow and avoid mixing unrelated features, refactors, docs,
+      examples, or dependency upgrades.
+    requires: []
+  - id: tasks
+    generates: tasks.md
+    description: Checkbox-driven implementation and verification checklist for a bounded fix.
+    template: templates/tasks.md
+    instruction: |
+      Create checkbox tasks for the approved fix scope. Include preparation,
+      implementation, verification, review, archive, and commit-readiness tasks.
+      Every actionable task must use `- [ ]` so OpenSpec can track progress.
+    requires:
+      - specs
+generates:
+  specs: templates/specs.md
+  tasks: templates/tasks.md
+templates:
+  specs: templates/specs.md
+  tasks: templates/tasks.md
+dependencies: []
+apply:
+  requires: [tasks]
+  tracks: tasks.md
+  instruction: |
+    Implement only the approved bounded fix. Keep one change to one purpose,
+    verify with documented commands, preserve secret safety, archive before
+    commit, and do not commit unless the human asks.
